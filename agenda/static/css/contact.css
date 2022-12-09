@@ -10,5 +10,40 @@
 
 .list li {
   padding: 15px;
+  width: 100%;
   border-bottom: 1px solid var(--color-text);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn {
+  padding: 5px 10px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.btn-detail {
+  background-color: var(--color-primary);
+  color: azure;
+}
+.btn-detail:hover {
+  background-color: azure;
+  color: var(--color-primary);
+}
+.btn-edit {
+  background-color: #ffcc00;
+  color: azure;
+}
+.btn-edit:hover {
+  background-color: azure;
+  color: #ffcc00;
+}
+.btn-delete {
+  background-color: #ae072b;
+  color: azure;
+}
+.btn-delete:hover {
+  background-color: azure;
+  color: #ae072b;
 }
