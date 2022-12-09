@@ -7,7 +7,6 @@
 }
 
 /* Main settings */
-
 * {
   margin: 0;
   padding: 0;
@@ -26,17 +25,7 @@
   src: url('../fonts/Roboto-Regular.ttf');
 }
 
-@font-face {
-  font-family: Reach-story;
-  src: url('../fonts/Reach-Story.ttf');
-}
-
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
 }
 /* End Main settings */
-
-/* Layout settings */
-
-
-/* End Layout settings */
