@@ -1,7 +1,33 @@
 main {
   display: flex;
+  flex-direction: column;
   width: 100vw;
   margin: 50px;
-  justify-content: center;
-  align-items: flex-start;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.search {
+  margin: 20px;
+  width: 50%;
+}
+
+.search-bar {
+  padding: 5px;
+  width: 80%;
+}
+
+.btn-search {
+  width: 19%;
+  background-color: var(--color-primary);
+  color: azure;
+  outline: none;
+  border: 0;
+  box-shadow: 0;
+  cursor: pointer;
+}
+
+.btn-search:hover {
+  background-color: azure;
+  color: var(--color-primary);
 }
