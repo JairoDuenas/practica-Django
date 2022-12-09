@@ -1,0 +1,14 @@
+@import './vars.css';
+
+.list {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--color-text);
+  width: 50%;
+  list-style-type: none;
+}
+
+.list li {
+  padding: 15px;
+  border-bottom: 1px solid var(--color-text);
+}

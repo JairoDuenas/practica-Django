@@ -1,9 +1,4 @@
-:root {
-  --color-primary: #2ea3f2;
-  --color-secondary: ;
-  --color-text: #666;
-  --font-main: Roboto-bold;
-}
+@import './vars.css';
 
 /* Layout settings */
 nav {
@@ -28,5 +23,11 @@ nav ul li a{
   color: aliceblue;
   text-transform: uppercase;
   font-family: var(--font-main);
+  padding: 10px;
 }
+
+nav ul li a:hover{
+  color: var(--color-text);
+}
+
 /* End Layout settings */
