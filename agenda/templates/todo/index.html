@@ -12,7 +12,7 @@
   <input type="text" class="search-bar" name="search" placeholder="Buscar tarea...">
   <input type="submit" class="btn btn-search" value="Buscar">
 </form>
-<span class="aux-btns"><a href="{% url 'todo' %}">Ver todos</a><a href="{% url 'todo_create' %}">Añadir</a></span>
+<span class="aux-btns"><a href="{% url 'todo' %}">Ver todas</a><a href="{% url 'todo_create' %}">Añadir</a></span>
   <ul class="list">
     {% for todo in todos %}
     <li>{{todo}}
