@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from .models import Todo
 from .forms import TodoForm
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -18,7 +19,26 @@ def view(request, id):
   return render(request, 'todo/detail.html', context)
 
 def edit(request, id):
-  return render(request, 'todo/index.html', {})
+  todo = Todo.objects.get(id=id)
+
+  if request.method == 'GET':
+    form = TodoForm(instance=todo)
+    context = {
+      'form': form,
+      'id': id
+    }
+    return render(request, 'todo/edit.html', context)
+
+  if request.method == 'POST':
+    form = TodoForm(request.POST, instance=todo)
+    if form.is_valid():
+      form.save()
+    messages.success(request, 'Tarea actualizada.')
+    context = {
+      'form': form,
+      'id': id
+    }
+    return render(request, 'todo/edit.html', context)
 
 def create(request):
   if request.method == 'GET':
