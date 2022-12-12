@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import Contact
 from .forms import ContactForm
 from django.contrib import messages
@@ -21,7 +21,7 @@ def view(request, id):
 def edit(request, id):
   contact = Contact.objects.get(id=id)
 
-  if(request.method == 'GET'):
+  if request.method == 'GET':
     form = ContactForm(instance=contact)
     context = {
       'form': form,
@@ -29,7 +29,7 @@ def edit(request, id):
     }
     return render(request, 'contact/edit.html', context)
 
-  if(request.method == 'POST'):
+  if request.method == 'POST':
     form = ContactForm(request.POST, instance=contact)
     if form.is_valid():
       form.save()
@@ -39,3 +39,17 @@ def edit(request, id):
     }
     messages.success(request, 'Contacto actualizado')
     return render(request, 'contact/edit.html', context)
+
+def create(request):
+  if request.method == 'GET':
+    form = ContactForm()
+    context = {
+      'form': form
+    }
+    return render(request, 'contact/create.html', context)
+
+  if request.method == 'POST':
+    form = ContactForm(request.POST)
+    if form.is_valid:
+      form.save()
+    return redirect('contact')
