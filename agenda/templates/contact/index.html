@@ -1,11 +1,10 @@
 {% extends 'layout/base.html' %}
 
-{% load static %}
-
 {% block 'title' %} Contactos {% endblock %}
 
 {% block 'styles' %}
-<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
 {% endblock %}
 
 {% block 'content' %}
