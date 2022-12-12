@@ -23,3 +23,22 @@ input {
   text-transform: uppercase;
   cursor: pointer;
 }
+
+.alert-success {
+  width:100%;
+  padding: 10px;
+  background-color: #0eba81;
+  color: aliceblue;
+}
+
+.aux-btns-form {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin: 10px;
+}
+
+.aux-btns-form a {
+  padding-right: 10px;
+  text-decoration: none;
+}

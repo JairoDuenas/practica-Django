@@ -1,6 +1,7 @@
 from django.shortcuts import render
 from .models import Contact
 from .forms import ContactForm
+from django.contrib import messages
 
 # Create your views here.
 def index(request):
@@ -18,10 +19,23 @@ def view(request, id):
   return render(request, 'contact/detail.html', context)
 
 def edit(request, id):
+  contact = Contact.objects.get(id=id)
+
   if(request.method == 'GET'):
-    contact = Contact.objects.get(id=id)
     form = ContactForm(instance=contact)
     context = {
-      'form': form
+      'form': form,
+      'id' : id
     }
-  return render(request, 'contact/create.html', context)
+    return render(request, 'contact/edit.html', context)
+
+  if(request.method == 'POST'):
+    form = ContactForm(request.POST, instance=contact)
+    if form.is_valid():
+      form.save()
+    context = {
+      'form': form,
+      'id' : id
+    }
+    messages.success(request, 'Contacto actualizado')
+    return render(request, 'contact/edit.html', context)
