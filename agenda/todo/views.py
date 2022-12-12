@@ -10,7 +10,11 @@ def index(request):
   return render(request, 'todo/index.html', context)
 
 def view(request, id):
-  return render(request, 'todo/index.html', {})
+  todo = Todo.objects.get(id=id)
+  context = {
+    'todo': todo
+  }
+  return render(request, 'todo/detail.html', context)
 
 def edit(request, id):
   return render(request, 'todo/index.html', {})
