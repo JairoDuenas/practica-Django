@@ -54,4 +54,6 @@ def create(request):
     return redirect('todo')
 
 def delete(request, id):
-  return render(request, 'todo/index.html', {})
+  todo = Todo.objects.get(id=id)
+  todo.delete()
+  return redirect('todo')
