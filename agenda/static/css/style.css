@@ -23,3 +23,27 @@ h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-main);
 }
 /* End Main settings */
+
+/* index settings */
+.cards {
+  display: flex;
+  justify-content: space-around;
+}
+
+.card {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 20px;
+  color: aliceblue;
+  text-decoration: none;
+  background-color: var(--color-primary);
+}
+
+.card:hover {
+  background-color: var(--color-text);
+}
+/* End index settings */
