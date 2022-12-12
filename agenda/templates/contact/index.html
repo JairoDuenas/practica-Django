@@ -4,14 +4,16 @@
 
 {% block 'title' %} Contactos {% endblock %}
 
-{% block 'content' %}
+{% block 'styles' %}
+<link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
 
+{% block 'content' %}
 <form class="search" action="{% url 'contact' %}" method="GET">
   <input type="text" class="search-bar" name="search" placeholder="Buscar contacto...">
   <input type="submit" class="btn btn-search" value="Buscar">
 </form>
 <span class="aux-btns"><a href="{% url 'contact' %}">Ver todos</a><a href="#">Añadir</a></span>
-<link rel="stylesheet" href="{% static 'css/contact.css' %}">
   <ul class="list">
     {% for contact in contacts %}
     <li>{{contact}}

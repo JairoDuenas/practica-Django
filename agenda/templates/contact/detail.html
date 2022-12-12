@@ -4,9 +4,12 @@
 
 {% block 'title' %} Contacto {{contact.name}} {% endblock %}
 
+{% block 'styles' %}
+  <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+{% endblock %}
+
 {% block 'content' %}
 <span class="aux-btns"><a href="{% url 'contact' %}">Volver atrás</a></span>
-<link rel="stylesheet" href="{% static 'css/contact.css' %}">
 
 <ul class="list">
     <li><b>Nombre: </b>{{contact.name}}</li>
