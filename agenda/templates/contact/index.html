@@ -13,6 +13,14 @@
   {% include 'contact/partials/search.html' %}
   {% include 'contact/partials/by_initial.html' %}
 
+  {% if messages %}
+  <ul class="messages">
+      {% for message in messages %}
+        <li{% if message.tags %} class="alert-success"{% endif %}>{{ message }}</li>
+      {% endfor %}
+  </ul>
+  {% endif %}
+
   <span class="aux-btns"><a href="{% url 'contact' %}">Ver todos</a><a href="{% url 'contact_create' %}">Añadir</a></span>
   <ul class="list">
     {% for contact in contacts %}

@@ -44,18 +44,20 @@ def edit(request, id):
     return render(request, 'contact/edit.html', context)
 
 def create(request):
-  if request.method == 'GET':
-    form = ContactForm()
-    context = {
+  form = ContactForm()
+  if request.POST:
+    form = ContactForm(request.POST)
+    if form.is_valid():
+      form.save()
+      messages.success(request, 'Agregado con exito')
+      return redirect('contact')
+    else:
+      messages.error(request, 'No fue agregado')
+
+  context = {
       'form': form
     }
-    return render(request, 'contact/create.html', context)
-
-  if request.method == 'POST':
-    form = ContactForm(request.POST)
-    if form.is_valid:
-      form.save()
-    return redirect('contact')
+  return render(request, 'contact/create.html', context)
 
 def delete(request, id):
   contact = Contact.objects.get(id=id)

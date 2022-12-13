@@ -32,6 +32,14 @@ main {
   color: var(--color-primary);
 }
 
+.alert-success {
+  width:100%;
+  padding: 10px;
+  background-color: #0eba81;
+  color: aliceblue;
+  margin-top: 20px;
+}
+
 .aux-btns {
   width: 50%;
   display: flex;

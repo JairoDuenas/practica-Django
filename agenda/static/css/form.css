@@ -24,11 +24,12 @@ input {
   cursor: pointer;
 }
 
-.alert-success {
+.alert-error {
   width:100%;
   padding: 10px;
-  background-color: #0eba81;
+  background-color: #c00c0c;
   color: aliceblue;
+  margin-top: 20px;
 }
 
 .aux-btns-form {
