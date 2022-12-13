@@ -15,7 +15,7 @@ input {
 }
 
 .btn-send {
-  width: 77%;
+  width: 70%;
   background-color: var(--color-primary);
   color: aliceblue;
   border: 0;
@@ -32,7 +32,7 @@ input {
 }
 
 .aux-btns-form {
-  width: 50%;
+  width: 40%;
   display: flex;
   justify-content: center;
   margin: 10px;
@@ -40,5 +40,4 @@ input {
 
 .aux-btns-form a {
   padding-right: 10px;
-  text-decoration: none;
 }

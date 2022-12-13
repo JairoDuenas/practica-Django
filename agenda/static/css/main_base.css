@@ -1,15 +1,15 @@
 main {
   display: flex;
   flex-direction: column;
-  width: 100vw;
-  margin: 50px;
+  width: 100%;
+  margin: 40px 0;
   justify-content: flex-start;
   align-items: center;
 }
 
 .search {
   margin: 20px;
-  width: 50%;
+  width: 70%;
 }
 
 .search-bar {
@@ -36,10 +36,9 @@ main {
   width: 50%;
   display: flex;
   justify-content: flex-start;
-  margin: 10px;
+  margin: 20px;
 }
 
 .aux-btns a {
   padding-right: 10px;
-  text-decoration: none;
 }
