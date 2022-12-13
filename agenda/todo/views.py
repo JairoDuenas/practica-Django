@@ -51,6 +51,7 @@ def create(request):
     form = TodoForm(request.POST)
     if form.is_valid():
       form.save()
+      messages.success(request, 'Tarea creada.')
     return redirect('todo')
 
 def delete(request, id):
