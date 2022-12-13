@@ -28,7 +28,13 @@
         <span>
           <a href="{% url 'contact_view' id=contact.id %}" class="btn btn-detail">Ver</a>
           <a href="{% url 'contact_edit' id=contact.id %}" class="btn btn-edit">Editar</a>
-          <a href="{% url 'contact_delete' id=contact.id %}" class="btn btn-delete">Borrar</a>
+          <a
+            href="{% url 'contact_delete' id=contact.id %}"
+            class="btn btn-delete"
+            onclick="return confirm('¿Está seguro de borrar este elemento?')"
+            >
+            Borrar
+          </a>
         </span>
       </li>
     {% endfor %}

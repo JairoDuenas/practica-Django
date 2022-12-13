@@ -27,7 +27,13 @@
         <span>
           <a href="{% url 'todo_view' id=todo.id %}" class="btn btn-detail">Ver</a>
           <a href="{% url 'todo_edit' id=todo.id %}" class="btn btn-edit">Editar</a>
-          <a href="{% url 'todo_delete' id=todo.id %}" class="btn btn-delete">Borrar</a>
+          <a
+            href="{% url 'todo_delete' id=todo.id %}"
+            class="btn btn-delete"
+            onclick="return confirm('¿Está seguro de borrar este elemento?')"
+          >
+          Borrar
+        </a>
         </span>
       </li>
     {% endfor %}
